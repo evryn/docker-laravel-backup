@@ -3,7 +3,7 @@ FROM php:7.4-cli
 
 WORKDIR /app
 
-RUN \
+RUN echo ":)" \
     # Update packages
     && apt-get update \
     # Install PHP and composer dependencies
@@ -11,7 +11,7 @@ RUN \
     # Clear out the local repository of retrieved package files
     && apt-get clean \
     # Install needed extensions
-    && docker-php-ext-install mcrypt pdo_mysql zip\
+    && docker-php-ext-install mcrypt pdo_mysql zip \
     # Install Composer
     && RUN curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     # Install Laravel

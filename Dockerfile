@@ -11,7 +11,7 @@ RUN echo ":)" \
     # Clear out the local repository of retrieved package files
     && apt-get clean \
     # Install needed extensions
-    && docker-php-ext-install mcrypt pdo_mysql zip \
+    && docker-php-ext-install pdo_mysql zip \
     # Install Composer
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     # Install Laravel

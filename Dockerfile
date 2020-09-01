@@ -7,7 +7,9 @@ RUN echo ":)" \
     # Update packages
     && apt-get update \
     # Install PHP and composer dependencies
-    && apt-get install -qq git curl libmcrypt-dev libjpeg-dev libpng-dev libfreetype6-dev libbz2-dev \
+    && apt-get update && apt-get install -y \
+       zlib1g-dev \
+       libzip-dev \
     # Clear out the local repository of retrieved package files
     && apt-get clean \
     # Install needed extensions

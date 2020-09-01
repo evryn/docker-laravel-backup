@@ -13,7 +13,7 @@ RUN echo ":)" \
     # Install needed extensions
     && docker-php-ext-install mcrypt pdo_mysql zip \
     # Install Composer
-    && RUN curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
+    && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     # Install Laravel
     && composer global require laravel/installer \
     && composer create-project --prefer-dist laravel/laravel . "7.*" \
